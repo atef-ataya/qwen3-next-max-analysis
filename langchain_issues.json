@@ -1,0 +1,502 @@
+[
+  {
+    "number": 15234,
+    "title": "Memory not persisting across agent runs",
+    "body": "When using ConversationBufferMemory with an agent, the conversation history is lost between runs. Expected behavior: Memory should persist. Actual: Each run starts fresh.\n\nSteps to reproduce:\n1. Initialize agent with memory\n2. Have a conversation\n3. Create new agent instance\n4. Memory is empty",
+    "state": "open",
+    "labels": ["bug", "memory", "agent"],
+    "created_at": "2025-10-15T10:23:45Z",
+    "comments": 12,
+    "url": "https://github.com/langchain-ai/langchain/issues/15234"
+  },
+  {
+    "number": 15198,
+    "title": "Agent enters infinite loop with certain prompts",
+    "body": "Agent gets stuck in a loop when asked complex multi-step questions. It keeps calling the same tool repeatedly without making progress. Need circuit breaker or max iterations check.",
+    "state": "open",
+    "labels": ["bug", "agent", "critical"],
+    "created_at": "2025-10-14T15:42:10Z",
+    "comments": 23,
+    "url": "https://github.com/langchain-ai/langchain/issues/15198"
+  },
+  {
+    "number": 15176,
+    "title": "Slow performance with large document retrieval",
+    "body": "Retrieval QA chain takes 30+ seconds with ChromaDB when dealing with 10k+ documents. Performance degrades significantly at scale. Need better indexing strategy.",
+    "state": "open",
+    "labels": ["performance", "retrieval", "vectorstore"],
+    "created_at": "2025-10-14T09:12:33Z",
+    "comments": 8,
+    "url": "https://github.com/langchain-ai/langchain/issues/15176"
+  },
+  {
+    "number": 15145,
+    "title": "Memory overflow with long conversations",
+    "body": "ConversationBufferWindowMemory causes OOM errors after ~50 message exchanges. Token count grows exponentially. Need better pruning strategy or token limit enforcement.",
+    "state": "open",
+    "labels": ["bug", "memory", "performance"],
+    "created_at": "2025-10-13T14:55:21Z",
+    "comments": 15,
+    "url": "https://github.com/langchain-ai/langchain/issues/15145"
+  },
+  {
+    "number": 15132,
+    "title": "Agent fails silently on tool execution errors",
+    "body": "When a tool raises an exception, the agent doesn't retry or provide useful error info to user. Just returns empty response. Need proper error handling and reporting.",
+    "state": "open",
+    "labels": ["bug", "agent", "error-handling"],
+    "created_at": "2025-10-13T11:20:45Z",
+    "comments": 19,
+    "url": "https://github.com/langchain-ai/langchain/issues/15132"
+  },
+  {
+    "number": 15089,
+    "title": "ChromaDB connection pool exhaustion",
+    "body": "After multiple retrieval calls, getting connection pool exhausted errors. Connections not being properly closed. Need connection pooling improvements.",
+    "state": "open",
+    "labels": ["bug", "vectorstore", "chroma"],
+    "created_at": "2025-10-12T16:33:12Z",
+    "comments": 7,
+    "url": "https://github.com/langchain-ai/langchain/issues/15089"
+  },
+  {
+    "number": 15067,
+    "title": "Inconsistent prompt templating across chains",
+    "body": "Different chains handle template variables differently. Some use {var}, others {{var}}. Need standardization for consistency.",
+    "state": "open",
+    "labels": ["enhancement", "prompts", "consistency"],
+    "created_at": "2025-10-12T10:45:23Z",
+    "comments": 11,
+    "url": "https://github.com/langchain-ai/langchain/issues/15067"
+  },
+  {
+    "number": 15034,
+    "title": "Memory serialization fails with custom objects",
+    "body": "Cannot serialize conversation memory when it contains custom Python objects. Need better serialization support or clear documentation on limitations.",
+    "state": "open",
+    "labels": ["bug", "memory", "serialization"],
+    "created_at": "2025-10-11T14:22:56Z",
+    "comments": 5,
+    "url": "https://github.com/langchain-ai/langchain/issues/15034"
+  },
+  {
+    "number": 15012,
+    "title": "Agent tool selection logic needs improvement",
+    "body": "Agent often selects wrong tool for the task. The tool selection prompt needs better examples and clearer descriptions. Especially problematic with similar tools.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "tool-calling"],
+    "created_at": "2025-10-11T09:15:44Z",
+    "comments": 18,
+    "url": "https://github.com/langchain-ai/langchain/issues/15012"
+  },
+  {
+    "number": 14998,
+    "title": "Rate limiting not handled in LLM calls",
+    "body": "When hitting OpenAI rate limits, entire chain fails. Need exponential backoff and retry logic built into base LLM classes.",
+    "state": "closed",
+    "labels": ["enhancement", "llm", "error-handling"],
+    "created_at": "2025-10-10T16:44:32Z",
+    "comments": 9,
+    "url": "https://github.com/langchain-ai/langchain/issues/14998"
+  },
+  {
+    "number": 14976,
+    "title": "Document loader fails on large PDFs",
+    "body": "PyPDFLoader crashes with MemoryError on PDFs > 100MB. Need streaming support or chunked loading for large documents.",
+    "state": "open",
+    "labels": ["bug", "document-loaders", "pdf"],
+    "created_at": "2025-10-10T11:23:15Z",
+    "comments": 13,
+    "url": "https://github.com/langchain-ai/langchain/issues/14976"
+  },
+  {
+    "number": 14954,
+    "title": "Async support incomplete for agents",
+    "body": "Agent.arun() doesn't properly handle async tools. Tools run sequentially instead of concurrently. Major performance bottleneck.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "async", "performance"],
+    "created_at": "2025-10-09T15:37:42Z",
+    "comments": 21,
+    "url": "https://github.com/langchain-ai/langchain/issues/14954"
+  },
+  {
+    "number": 14932,
+    "title": "Memory context window calculation incorrect",
+    "body": "Token counting for memory doesn't match actual LLM token usage. Causes context overflow errors with models like GPT-4.",
+    "state": "open",
+    "labels": ["bug", "memory", "tokens"],
+    "created_at": "2025-10-09T10:12:28Z",
+    "comments": 6,
+    "url": "https://github.com/langchain-ai/langchain/issues/14932"
+  },
+  {
+    "number": 14910,
+    "title": "Vector store metadata filtering broken",
+    "body": "Metadata filters on Pinecone not working as expected. Filter syntax unclear and inconsistent across different vector stores.",
+    "state": "open",
+    "labels": ["bug", "vectorstore", "pinecone", "metadata"],
+    "created_at": "2025-10-08T14:55:17Z",
+    "comments": 10,
+    "url": "https://github.com/langchain-ai/langchain/issues/14910"
+  },
+  {
+    "number": 14887,
+    "title": "Agent max iterations not enforced",
+    "body": "Setting max_iterations on agent doesn't actually stop execution. Agent continues past limit causing runaway costs.",
+    "state": "open",
+    "labels": ["bug", "agent", "critical"],
+    "created_at": "2025-10-08T09:33:51Z",
+    "comments": 16,
+    "url": "https://github.com/langchain-ai/langchain/issues/14887"
+  },
+  {
+    "number": 14865,
+    "title": "Callback handlers not called for nested chains",
+    "body": "When using chain within chain, callbacks only fire for parent. Child chain callbacks ignored. Makes debugging difficult.",
+    "state": "open",
+    "labels": ["bug", "callbacks", "chains"],
+    "created_at": "2025-10-07T16:41:29Z",
+    "comments": 4,
+    "url": "https://github.com/langchain-ai/langchain/issues/14865"
+  },
+  {
+    "number": 14843,
+    "title": "Memory not shared between agent and tools",
+    "body": "Agent has access to conversation history but tools don't. Tools need context to make informed decisions. Need shared memory architecture.",
+    "state": "open",
+    "labels": ["enhancement", "memory", "agent", "tools"],
+    "created_at": "2025-10-07T11:28:44Z",
+    "comments": 14,
+    "url": "https://github.com/langchain-ai/langchain/issues/14843"
+  },
+  {
+    "number": 14821,
+    "title": "Embeddings cache not working correctly",
+    "body": "CacheBackedEmbeddings doesn't cache properly. Same documents re-embedded on every run. Wasting time and API calls.",
+    "state": "open",
+    "labels": ["bug", "embeddings", "cache", "performance"],
+    "created_at": "2025-10-06T15:17:22Z",
+    "comments": 8,
+    "url": "https://github.com/langchain-ai/langchain/issues/14821"
+  },
+  {
+    "number": 14799,
+    "title": "Streaming not supported in Sequential Chain",
+    "body": "SequentialChain doesn't stream intermediate results. User sees nothing until all chains complete. Need progressive streaming.",
+    "state": "open",
+    "labels": ["enhancement", "chains", "streaming"],
+    "created_at": "2025-10-06T10:52:15Z",
+    "comments": 12,
+    "url": "https://github.com/langchain-ai/langchain/issues/14799"
+  },
+  {
+    "number": 14777,
+    "title": "Document splitter loses context",
+    "body": "RecursiveCharacterTextSplitter splits mid-sentence or mid-paragraph. Chunks lack context making retrieval less accurate.",
+    "state": "open",
+    "labels": ["enhancement", "document-loaders", "text-splitting"],
+    "created_at": "2025-10-05T14:35:48Z",
+    "comments": 7,
+    "url": "https://github.com/langchain-ai/langchain/issues/14777"
+  },
+  {
+    "number": 14755,
+    "title": "Agent planning step too verbose",
+    "body": "ReAct agent's thinking process takes too many tokens. Should be more concise to save costs and reduce latency.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "performance", "cost"],
+    "created_at": "2025-10-05T09:44:31Z",
+    "comments": 9,
+    "url": "https://github.com/langchain-ai/langchain/issues/14755"
+  },
+  {
+    "number": 14733,
+    "title": "No telemetry for production monitoring",
+    "body": "Missing observability features. Need metrics for: token usage, latency, error rates, tool calls. Critical for production deployments.",
+    "state": "open",
+    "labels": ["enhancement", "observability", "production"],
+    "created_at": "2025-10-04T16:22:19Z",
+    "comments": 23,
+    "url": "https://github.com/langchain-ai/langchain/issues/14733"
+  },
+  {
+    "number": 14711,
+    "title": "Memory pruning strategy needed",
+    "body": "No good way to prune old conversation turns based on relevance. Everything either kept or discarded by recency. Need semantic pruning.",
+    "state": "open",
+    "labels": ["enhancement", "memory", "retrieval"],
+    "created_at": "2025-10-04T11:15:42Z",
+    "comments": 11,
+    "url": "https://github.com/langchain-ai/langchain/issues/14711"
+  },
+  {
+    "number": 14689,
+    "title": "Tool description prompt engineering needed",
+    "body": "Agent performs better with well-crafted tool descriptions. Need guidelines and examples for writing good tool descriptions.",
+    "state": "open",
+    "labels": ["documentation", "agent", "tools"],
+    "created_at": "2025-10-03T15:48:27Z",
+    "comments": 5,
+    "url": "https://github.com/langchain-ai/langchain/issues/14689"
+  },
+  {
+    "number": 14667,
+    "title": "Vector store migration path unclear",
+    "body": "No clear way to migrate from one vector store to another. Need export/import utilities and migration guide.",
+    "state": "open",
+    "labels": ["enhancement", "vectorstore", "documentation"],
+    "created_at": "2025-10-03T10:33:54Z",
+    "comments": 6,
+    "url": "https://github.com/langchain-ai/langchain/issues/14667"
+  },
+  {
+    "number": 14645,
+    "title": "Agent timeout handling missing",
+    "body": "Agents can run indefinitely with no timeout mechanism. Need configurable timeout with graceful degradation.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "reliability"],
+    "created_at": "2025-10-02T14:27:16Z",
+    "comments": 13,
+    "url": "https://github.com/langchain-ai/langchain/issues/14645"
+  },
+  {
+    "number": 14623,
+    "title": "Retrieval results not deterministic",
+    "body": "Same query returns different documents on repeated calls. Makes testing difficult. Need deterministic mode for development.",
+    "state": "open",
+    "labels": ["bug", "retrieval", "testing"],
+    "created_at": "2025-10-02T09:52:41Z",
+    "comments": 8,
+    "url": "https://github.com/langchain-ai/langchain/issues/14623"
+  },
+  {
+    "number": 14601,
+    "title": "Memory summary generation slow",
+    "body": "ConversationSummaryMemory takes 3-5s to summarize. This adds significant latency to agent responses. Need async summarization.",
+    "state": "open",
+    "labels": ["performance", "memory", "async"],
+    "created_at": "2025-10-01T16:18:35Z",
+    "comments": 7,
+    "url": "https://github.com/langchain-ai/langchain/issues/14601"
+  },
+  {
+    "number": 14579,
+    "title": "Tool error messages not passed to agent",
+    "body": "When tool fails, agent doesn't see error message. Just knows it failed. Agent needs error context to recover or try alternative approach.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "tools", "error-handling"],
+    "created_at": "2025-10-01T11:42:28Z",
+    "comments": 15,
+    "url": "https://github.com/langchain-ai/langchain/issues/14579"
+  },
+  {
+    "number": 14557,
+    "title": "Document loader encoding issues",
+    "body": "TextLoader fails on non-UTF8 files. Need auto-detection and fallback encoding support.",
+    "state": "closed",
+    "labels": ["bug", "document-loaders", "encoding"],
+    "created_at": "2025-09-30T15:34:19Z",
+    "comments": 4,
+    "url": "https://github.com/langchain-ai/langchain/issues/14557"
+  },
+  {
+    "number": 14535,
+    "title": "Agent should support parallel tool execution",
+    "body": "When agent decides to use multiple tools, they execute sequentially. Should run independent tools in parallel for better performance.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "performance", "async"],
+    "created_at": "2025-09-30T10:28:47Z",
+    "comments": 19,
+    "url": "https://github.com/langchain-ai/langchain/issues/14535"
+  },
+  {
+    "number": 14513,
+    "title": "Vector store batch operations inefficient",
+    "body": "add_documents processes one at a time. Batch API calls would significantly improve ingestion speed.",
+    "state": "open",
+    "labels": ["enhancement", "vectorstore", "performance"],
+    "created_at": "2025-09-29T14:15:33Z",
+    "comments": 6,
+    "url": "https://github.com/langchain-ai/langchain/issues/14513"
+  },
+  {
+    "number": 14491,
+    "title": "Memory cleanup strategy needed",
+    "body": "No way to explicitly clear or reset memory. Have to create new instance. Need clear(), reset(), and partial deletion methods.",
+    "state": "open",
+    "labels": ["enhancement", "memory", "api"],
+    "created_at": "2025-09-29T09:47:22Z",
+    "comments": 8,
+    "url": "https://github.com/langchain-ai/langchain/issues/14491"
+  },
+  {
+    "number": 14469,
+    "title": "Callback system needs better error handling",
+    "body": "If callback raises exception, entire chain fails. Callbacks should be isolated and not break main execution flow.",
+    "state": "open",
+    "labels": ["bug", "callbacks", "error-handling"],
+    "created_at": "2025-09-28T16:33:18Z",
+    "comments": 11,
+    "url": "https://github.com/langchain-ai/langchain/issues/14469"
+  },
+  {
+    "number": 14447,
+    "title": "Agent context length management",
+    "body": "Agent doesn't intelligently manage context window. Should prioritize recent and relevant messages, not just truncate.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "memory", "context"],
+    "created_at": "2025-09-28T11:21:45Z",
+    "comments": 14,
+    "url": "https://github.com/langchain-ai/langchain/issues/14447"
+  },
+  {
+    "number": 14425,
+    "title": "Tool result formatting inconsistent",
+    "body": "Different tools return results in different formats (string, dict, list). Need standardized tool output format.",
+    "state": "open",
+    "labels": ["enhancement", "tools", "consistency"],
+    "created_at": "2025-09-27T15:55:39Z",
+    "comments": 7,
+    "url": "https://github.com/langchain-ai/langchain/issues/14425"
+  },
+  {
+    "number": 14403,
+    "title": "Retrieval confidence scores unreliable",
+    "body": "Similarity scores from vector stores not calibrated. Can't set meaningful threshold. Need normalized confidence scores.",
+    "state": "open",
+    "labels": ["enhancement", "retrieval", "vectorstore"],
+    "created_at": "2025-09-27T10:42:27Z",
+    "comments": 9,
+    "url": "https://github.com/langchain-ai/langchain/issues/14403"
+  },
+  {
+    "number": 14381,
+    "title": "Agent hallucination detection needed",
+    "body": "Agent sometimes invents tool calls or capabilities. Need validation layer to check if tool call is valid before execution.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "reliability", "validation"],
+    "created_at": "2025-09-26T14:38:51Z",
+    "comments": 18,
+    "url": "https://github.com/langchain-ai/langchain/issues/14381"
+  },
+  {
+    "number": 14359,
+    "title": "Memory serialization for persistence",
+    "body": "Need built-in support for saving/loading memory from disk or database. Critical for stateful applications.",
+    "state": "open",
+    "labels": ["enhancement", "memory", "persistence"],
+    "created_at": "2025-09-26T09:24:16Z",
+    "comments": 12,
+    "url": "https://github.com/langchain-ai/langchain/issues/14359"
+  },
+  {
+    "number": 14337,
+    "title": "Tool dependency resolution",
+    "body": "Some tools depend on output of other tools. Agent should understand dependencies and call tools in correct order.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "tools"],
+    "created_at": "2025-09-25T16:17:43Z",
+    "comments": 10,
+    "url": "https://github.com/langchain-ai/langchain/issues/14337"
+  },
+  {
+    "number": 14315,
+    "title": "Retrieval reranking support",
+    "body": "Initial retrieval returns many irrelevant docs. Need reranking layer to improve precision. Integration with Cohere rerank or similar.",
+    "state": "open",
+    "labels": ["enhancement", "retrieval", "reranking"],
+    "created_at": "2025-09-25T11:53:28Z",
+    "comments": 13,
+    "url": "https://github.com/langchain-ai/langchain/issues/14315"
+  },
+  {
+    "number": 14293,
+    "title": "Agent planning needs improvement",
+    "body": "Agent doesn't plan ahead. Makes one tool call at a time reactively. Should create execution plan for complex tasks.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "planning"],
+    "created_at": "2025-09-24T15:46:12Z",
+    "comments": 21,
+    "url": "https://github.com/langchain-ai/langchain/issues/14293"
+  },
+  {
+    "number": 14271,
+    "title": "Memory token budget enforcement",
+    "body": "Memory doesn't respect token limits. Should automatically prune when approaching limit rather than failing.",
+    "state": "open",
+    "labels": ["enhancement", "memory", "tokens"],
+    "created_at": "2025-09-24T10:31:57Z",
+    "comments": 8,
+    "url": "https://github.com/langchain-ai/langchain/issues/14271"
+  },
+  {
+    "number": 14249,
+    "title": "Tool validation layer needed",
+    "body": "Tools should validate inputs before execution. Currently validation happens at runtime causing failures. Need pydantic-based validation.",
+    "state": "open",
+    "labels": ["enhancement", "tools", "validation"],
+    "created_at": "2025-09-23T14:25:34Z",
+    "comments": 6,
+    "url": "https://github.com/langchain-ai/langchain/issues/14249"
+  },
+  {
+    "number": 14227,
+    "title": "Retrieval query transformation",
+    "body": "User queries need transformation before vector search. HyDE, query expansion, etc. Should be built-in option.",
+    "state": "open",
+    "labels": ["enhancement", "retrieval", "query-transformation"],
+    "created_at": "2025-09-23T09:18:41Z",
+    "comments": 11,
+    "url": "https://github.com/langchain-ai/langchain/issues/14227"
+  },
+  {
+    "number": 14205,
+    "title": "Agent decision logging insufficient",
+    "body": "Hard to debug agent decisions. Need detailed logging of: why tool selected, what alternatives considered, confidence scores.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "logging", "observability"],
+    "created_at": "2025-09-22T16:44:28Z",
+    "comments": 15,
+    "url": "https://github.com/langchain-ai/langchain/issues/14205"
+  },
+  {
+    "number": 14183,
+    "title": "Memory compression strategies",
+    "body": "Long conversations need compression. Not just summarization - semantic compression preserving important details.",
+    "state": "open",
+    "labels": ["enhancement", "memory", "compression"],
+    "created_at": "2025-09-22T11:37:15Z",
+    "comments": 9,
+    "url": "https://github.com/langchain-ai/langchain/issues/14183"
+  },
+  {
+    "number": 14161,
+    "title": "Tool usage analytics missing",
+    "body": "No visibility into which tools are used most, success rates, latency per tool. Need analytics for optimization.",
+    "state": "open",
+    "labels": ["enhancement", "tools", "analytics", "observability"],
+    "created_at": "2025-09-21T15:52:47Z",
+    "comments": 7,
+    "url": "https://github.com/langchain-ai/langchain/issues/14161"
+  },
+  {
+    "number": 14139,
+    "title": "Agent self-correction capabilities",
+    "body": "When agent makes mistake, it should detect and correct. Need reflection/self-evaluation loop.",
+    "state": "open",
+    "labels": ["enhancement", "agent", "self-correction"],
+    "created_at": "2025-09-21T10:46:32Z",
+    "comments": 16,
+    "url": "https://github.com/langchain-ai/langchain/issues/14139"
+  },
+  {
+    "number": 14117,
+    "title": "Vector store backup and restore",
+    "body": "No built-in way to backup vector store indexes. Need export/import functionality for disaster recovery.",
+    "state": "open",
+    "labels": ["enhancement", "vectorstore", "backup"],
+    "created_at": "2025-09-20T14:33:19Z",
+    "comments": 5,
+    "url": "https://github.com/langchain-ai/langchain/issues/14117"
+  }
+]
